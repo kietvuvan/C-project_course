@@ -1,0 +1,20 @@
+﻿  list.cpp
+  main.cpp
+e:\c++\funix\c++ nang cao\2\pj2visual\pj2visual\list.cpp(29): error C2440: 'return': cannot convert from 'int' to 'T'
+          with
+          [
+              T=Employee *
+          ]
+  e:\c++\funix\c++ nang cao\2\pj2visual\pj2visual\list.cpp(29): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+  e:\c++\funix\c++ nang cao\2\pj2visual\pj2visual\list.cpp(20): note: while compiling class template member function 'T List<T>::get(int)'
+          with
+          [
+              T=Employee *
+          ]
+  e:\c++\funix\c++ nang cao\2\pj2visual\pj2visual\main.cpp(23): note: see reference to function template instantiation 'T List<T>::get(int)' being compiled
+          with
+          [
+              T=Employee *
+          ]
+  e:\c++\funix\c++ nang cao\2\pj2visual\pj2visual\main.cpp(13): note: see reference to class template instantiation 'List<Employee *>' being compiled
+  Generating Code...

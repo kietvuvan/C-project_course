@@ -1,0 +1,249 @@
+#include"pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+string account_number;
+int menu_option;
+int withdraw_option;
+float deposit_amount;
+char welcome_option;
+long balance_amount = 5000000;
+
+// Function declarations
+void Welcome();
+void ShowMenu();
+void CheckBalance();
+void Withdraw();
+void Deposit();
+void Eject();
+
+
+int main()
+{
+	cout << "--ATM C++ kinh chao quy khach--" << endl;
+	cout << "--Vui long dua the ATM vao--" << endl;
+	system("pause");
+	
+	//your code here
+	 Welcome();
+	 ShowMenu();
+	 CheckBalance();
+	 Withdraw();
+	 Deposit();
+	 Eject();
+	system("pause");
+	return 0;
+	
+}
+
+// Hien thi thong diep welcome va
+// yeu cau nguoi dung nhap vao tai khoan giao dich
+
+void Welcome() {
+	system("cls");
+	cout << "--ATM C++ kinh chao quy khach--" << endl;
+	cout << "Da nhan duoc the, vui long nhap tai khoan giao dich:" << endl;
+
+	cin >> account_number;
+	//your code here
+	if (account_number == "0021002108537")
+	{
+		cout << "tai khoan:" << account_number << endl;
+		cout << "Ban co muon nhap lai tai khoan khong(y / n)" << endl;
+		cin >> welcome_option;
+		system("cls");
+	}
+	else {
+		cout << "so tai khoan khong dung" << endl;
+		system("pause");
+		Eject();
+	}
+
+	while (1) {
+		if (welcome_option != 'n' && welcome_option != 'y'){
+			//your code here
+			cout << "vui long chi nhap'y'hoac 'n'. Ban co muon nhap lai tai khoan khong(y/n)" << endl;
+			system("pause");
+			continue;
+			
+		}
+		if (welcome_option == 'y') {
+			//your code here
+			cout << "so Tai Khoan da nhap:  " << account_number  << endl;;
+			cout << "Vui long nhap lai \nTai khoan:" << endl;
+			cin >> account_number;
+		} else {
+			//your code 
+			welcome_option == 'n';
+			ShowMenu();
+		}
+	}
+
+	ShowMenu();
+}
+
+// Hien thi menu voi 4 chuc nang
+void ShowMenu() {
+	do {
+		system("cls");
+		//your code here
+		cout << "menu \n" << endl;
+		cout << "1.Tra so du \n" << endl;
+		cout << "2.Rut tien \n" << endl;
+		cout << "3.Nap tien \n" << endl;
+		cout << "4.Ngung giao dich \n" << endl;
+		cout << "Vui long chon menu tu 1 toi 4" << endl;
+		cin >> menu_option;
+	} while (menu_option < 1 || menu_option>4);
+
+	switch (menu_option) {
+	case 1:
+		CheckBalance();
+		break;
+	case 2:
+		Withdraw();
+		break;
+	case 3:
+		Deposit();
+		break;
+	case 4:
+		Eject();
+	}
+}
+
+// Tra cuu so du
+void CheckBalance()
+{
+	system("cls");
+
+	//your code here
+	
+	cout << "tai khoan: " << account_number << endl;
+	cout << "SO du : " <<  balance_amount << endl;
+	system("pause");
+	ShowMenu();
+}
+
+// Rut tien trong tai khoan
+void Withdraw()
+{
+	system("cls");
+	do {
+		cout << "--RUT TIEN--" << endl;
+		//your code here
+		cout << "Vui long chon so tien muon rut \n" << endl;
+		cout << "1.  50000(nam muoi nghin dong)" << endl;
+		cout << "2.  100000(mot tram nghin dong)" << endl;
+		cout << "3.  200000(hai tram nghin dong)" << endl;
+		cout << "4.  500000(nam tram nghin dong)" << endl;
+		cout << "5.  1000000(mot trieu dong)" << endl;
+		cout << "6.  2000000(hai trieu  dong)" << endl;
+		cout << "7.  thoat ve man hinh chinh" << endl;
+		cin >> withdraw_option;
+		cout << endl;
+	} while (withdraw_option < 1 || withdraw_option>7);
+
+
+	int withdraw_amount = 0; // So tien muon rut
+	switch (withdraw_option) {
+		case 1:
+			//your code here
+			
+			     withdraw_amount = 50000;
+			cout << "Rut 50000tu :" << endl;
+			
+			break;
+			
+		case 2:
+			//your code here
+			
+			withdraw_amount = 100000;
+			cout << "Rut 100000tu :" << endl;
+			
+			break;
+			
+		case 3:
+			//your code here
+			
+			withdraw_amount = 200000;
+			cout << "Rut 200000tu :" << endl;
+			
+			
+		case 4:
+			//your code here
+			
+			withdraw_amount = 500000;
+			cout << "Rut 500000tu :" << endl;
+			cout << "so tai khoan :" << account_number << endl;
+			break;
+			
+		case 5:
+			//your code here
+			
+			withdraw_amount = 1000000;
+			cout << "Rut 1000000tu :" << endl;
+			
+			break;
+			
+		case 6: 
+			//your code here
+			
+			withdraw_amount = 2000000;
+			cout << "Rut 2000000tu :" << endl;
+			
+			break;
+			
+		case 7:
+			cout << "\nVe man hinh chinh..." << endl;
+			system("pause");
+			ShowMenu();
+			return ;
+	}
+	if (balance_amount < withdraw_amount) {
+		//your code here
+		cout << "so du nho hon"<< withdraw_amount <<"khong the thuc hien giao dich"<< endl;
+		cout << "so du hien tai:" << balance_amount << endl;
+	} else {
+		cout << "so tai khoan :" << account_number << endl;
+		balance_amount = balance_amount - withdraw_amount;
+	     cout << " so du hien tai" << balance_amount << endl;
+		cout << "Vui long nhan lai the ATM va kiem tra tien truoc khi di" << endl;
+		
+	}
+	system("pause");
+	ShowMenu();
+	
+}
+
+
+// Nap tien vao tai khoan
+
+void Deposit()
+{
+	system("cls");
+	cout << "Nap tien" << endl;
+	
+	//your code here
+	cin >> deposit_amount;
+	cout << "Nap" << deposit_amount << "vao tai khoan" << account_number;
+	balance_amount = balance_amount + deposit_amount;
+	cout << "\nSo du hien tai: " << balance_amount << endl;
+	cout << endl;
+	system("pause");
+	ShowMenu();
+}
+
+// Ngung giao dich
+void Eject()
+{
+	system("cls");
+	cout << "--ATM C++--" << endl;
+	cout << "\nKet thuc..." << endl;
+	cout << "\nVui long nhan the va tien o khe cam" << endl;
+	cout << "\nCam on quy khach da su dung dich vu tai ATM C++" << endl;
+	system("pause");
+	exit(0);
+	
+}
+

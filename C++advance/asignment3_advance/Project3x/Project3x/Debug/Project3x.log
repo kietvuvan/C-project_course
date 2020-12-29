@@ -1,0 +1,20 @@
+﻿  list.cpp
+  maincpp.cpp
+d:\visual advance\project3x\project3x\maincpp.cpp(12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\visual advance\project3x\project3x\maincpp.cpp(13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\visual advance\project3x\project3x\maincpp.cpp(14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\visual advance\project3x\project3x\list.cpp(25): warning C4018: '>': signed/unsigned mismatch
+  d:\visual advance\project3x\project3x\list.cpp(20): note: while compiling class template member function 'T List<T>::get(int)'
+          with
+          [
+              T=Employee *
+          ]
+  d:\visual advance\project3x\project3x\maincpp.cpp(38): note: see reference to function template instantiation 'T List<T>::get(int)' being compiled
+          with
+          [
+              T=Employee *
+          ]
+  d:\visual advance\project3x\project3x\maincpp.cpp(16): note: see reference to class template instantiation 'List<Employee *>' being compiled
+  manager.cpp
+  Generating Code...
+  Project3x.vcxproj -> D:\visual advance\Project3x\Debug\Project3x.exe
